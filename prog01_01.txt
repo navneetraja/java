@@ -1,0 +1,30 @@
+class Solution {
+    public int solution(int N) {
+        // write your code in Java SE 8
+        String str=Integer.toBinaryString(N);
+        
+        int temp=0,gap=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)=='0')
+            {
+                gap++;
+            }else
+            {
+                if(temp<gap)
+                {
+                    temp=gap;
+                }
+                gap=0;
+                
+            }
+        }    
+            if(temp<gap)
+            {
+                return gap;
+            }else
+            {
+                return temp;
+            }
+    }
+}
